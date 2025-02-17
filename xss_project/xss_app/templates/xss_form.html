@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario XSS</title>
+</head>
+<body>
+    <h1>Ingrese un comentario</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        <input type="text" name="comment" value="">
+        <input type="submit" value="Enviar">
+    </form>
+    <br>
+    <a href="{% url 'xss_vulnerable' %}">Formulario Vulnerable</a> |
+    <a href="{% url 'xss_protected' %}">Formulario Protegido</a>
+</body>
+</html>

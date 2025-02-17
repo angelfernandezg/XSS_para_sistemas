@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado</title>
+</head>
+<body>
+    <h1>Resultado</h1>
+    <p>{{ result|safe }}</p>
+    {% if sanitized %}
+        <p>El contenido ha sido saneado.</p>
+    {% else %}
+        <p><strong>Advertencia:</strong> El contenido no ha sido saneado y es vulnerable a XSS.</p>
+    {% endif %}
+    <br>
+    <a href="{% url 'xss_vulnerable' %}">Volver al Formulario Vulnerable</a> |
+    <a href="{% url 'xss_protected' %}">Volver al Formulario Protegido</a>
+</body>
+</html>
